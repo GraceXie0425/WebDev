@@ -1,176 +1,287 @@
-/*** You will not need this file until Unit 5 ***/
-/*** Dark Mode ***
-  
-  Purpose:
-  - Use this starter code to add a dark mode feature to your website.
-
-  When To Modify:
-  - [ ] Project 5 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
-// Step 1: Select the theme button
-let themeButton = document.getElementById('theme-button');
-
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
+/*** VSCodeEDU preview fix ***/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    scroll-padding-top: 80px;
+    font-family: Tahoma, sans-serif;
 }
 
-themeButton.addEventListener('click', toggleDarkMode);
+/*** Body ***/
+body {
+    font-size: 16px;
+    color: var(--text-color);
+    padding: 30px;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
+}
 
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--bg-color-dark-mode);
+    color: var(--text-color-dark-mode);
+}
 
-/*** Form Handling [PLACEHOLDER] [ADDED IN UNIT 6] ***/
-/*** Form Handling ***
-  
-  Purpose:
-  - When the user submits the RSVP form, the name and state they 
-    entered should be added to the list of participants.
+/*** Text Styles ***/
+h1 {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 48px;
+    font-weight: normal;
+    color: black; 
+    margin: 0;
+    text-align: center;
+}
 
-  When To Modify:
-  - [ ] Project 6 (REQUIRED FEATURE)
-  - [ ] Project 6 (STRETCH FEATURE) 
-  - [ ] Project 7 (REQUIRED FEATURE)
-  - [ ] Project 9 (REQUIRED FEATURE)
-  - [ ] Any time between / after
-***/
+h2 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
+    color: #695C5C;
+    text-align: center;
+}
 
-// Step 1: Add your query for the submit RSVP button here
-const rsvpButton = document.getElementById('rsvp-button');
+h3, h4 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
 
-// Step 2: Write your code to manipulate the DOM here
-const addParticipant = (person) => {
+h5 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
+    color: #695C5C;
+    text-align: center;
+}
 
-  // Get user inputs
-  const name = person.name;
-  const eventSelected = person.event;
+p {
+    font-family: 'Imprima', cursive;
+    font-size: 16px;
+    color: #2E2828;
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.5;
+    text-align: left;
+}
 
-  // Create a new <p> element for the participant
-  const newEntry = document.createElement('p');
+button {
+    font-size: 13px;
+    padding: 5px 10px;
+    margin: 20px;
+    background-color: #E2E2E2;
+    color: black;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-  // Get a display-friendly version of the event name
-  let displayEvent = '';
-  if (eventSelected === 'share-your-story-day') {
-    displayEvent = 'Share Your Story Day';
-  } else if (eventSelected === 'words-of-encouragement-week') {
-    displayEvent = 'Words of Encouragement Week';
-  } else if (eventSelected === 'let-it-go-challenge') {
-    displayEvent = 'Let It Go Challenge';
-  }
+button:hover {
+    background-color: #D9D8D8;
+}
 
-  // Set the content with an emoji and details
-  newEntry.textContent = `🎉 ${name} has RSVP'd for ${displayEvent}.`;
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
 
-  // Append the new <p> to the .rsvp-participants container
-  const participantsDiv = document.querySelector('.rsvp-participants');
-  participantsDiv.appendChild(newEntry);
+#header-img {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
+}
 
-  // Optional: Reset the form after submission
-  document.getElementById('rsvp-form').reset();
-};
+/* UL Style */
+ul {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    list-style-position: outside;
+}
 
-// Step 3: Add a click event listener to the submit RSVP button here
+ul li {
+    text-align: left;
+    display: list-item;
+}
 
-/*** Form Validation [PLACEHOLDER] [ADDED IN UNIT 7] ***/
-/*** Form Validation ***
-  
-  Purpose:
-  - Prevents invalid form submissions from being added to the list of participants.
+ul li b {
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
+    font-weight: bold;
+}
 
-  When To Modify:
-  - [ ] Project 7 (REQUIRED FEATURE)
-  - [ ] Project 7 (STRETCH FEATURE)
-  - [ ] Project 9 (REQUIRED FEATURE)
-  - [ ] Any time between / after
-***/
+ul li i {
+    font-family: 'Imprima', cursive;
+}
 
-const validateForm = (event) => {
-  event.preventDefault();
-  let containsErrors = false;
+/*** Navbar ***/
+.navbar ul {
+    z-index: 1000;
+    list-style: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #E5D1FF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    margin: 0;
+}
 
-  const nameInput = document.getElementById("name");
-  const emailInput = document.getElementById("email");
-  const eventSelect = document.getElementById("event");
+.navbar ul li a {
+    text-decoration: none;
+    display: block;
+    font-family: 'Imprima', cursive;
+    color: black;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
 
-  nameInput.classList.remove("error");
-  emailInput.classList.remove("error");
-  eventSelect.classList.remove("error");
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
 
-  if (nameInput.value.trim() === "") {
-    nameInput.classList.add("error");
-    containsErrors = true;
-  }
+.navbar ul li button {
+    font-family: 'Imprima', cursive;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4A66A3;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(emailInput.value.trim())) {
-    emailInput.classList.add("error");
-    containsErrors = true;
-  }
+.navbar ul li button:hover {
+    background-color: #7f75d2;
+}
 
-  if (eventSelect.value === "None") {
-    eventSelect.classList.add("error");
-    containsErrors = true;
-  }
-  
-  if (!containsErrors) {
-    let person = {
-      name: nameInput.value.trim(),
-      email: emailInput.value.trim(),
-      event: eventSelect.value
-    };
-    addParticipant(person);
-    toggleModal(person); 
-  }
-  
-};
+/*** RSVP Section ***/
+.rsvp-container {
+    display: flex; 
+    justify-content: center;
+    flex-direction: row; 
+    gap: 20px; 
+    width: 100%;
+    padding-bottom: 50px; 
+}
 
-rsvpButton.addEventListener('click', validateForm);
+.rsvp-para {
+    width: 55%; 
+    padding-left: 30px;
+    padding-right: 10px; 
+}
 
-/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
-let rotateFactor = 10;  // This will alternate between 0 and -10 for rotation
-let modalImage = document.getElementById("modal-image");  // Assuming you have an image with id 'modal-image'
+.rsvp-participants {
+    width: 45%; 
+    padding-left: 20px;
+}
 
-const animateImage = () => {
-  if (modalImage) {  // Ensure the modal image is available
-    // Alternate between 0 and -10 degrees for rotation
-    rotateFactor = rotateFactor === 2 ? -2 : 2;
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    modalImage.style.transition = "transform 0.5s ease-in-out";  
-    // Apply the rotation to the modal image
-    modalImage.style.transform = `rotate(${rotateFactor}deg)`;
-  }
-};
+#rsvp-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+}
 
-/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
-/*** Modal ***
-  
-  Purpose:
-  - Use this starter code to add a pop-up modal to your website.
+#rsvp-button {
+    font-family: 'Imprima', cursive;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4A66A3;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-  When To Modify:
-  - [ ] Project 9 (REQUIRED FEATURE)
-  - [ ] Project 9 (STRETCH FEATURE)
-  - [ ] Any time after
-***/
+#rsvp-button:hover {
+    background-color: #7f75d2;
+}
 
-const toggleModal = (person) => {
-  let modal = document.getElementById("success-modal");  // Get the modal element
-  const modalText = document.getElementById("modal-text");  // Get the text element inside the modal
-  
-  // Check if the modal exists
-  if (modal && modalText) {
-    // Display the modal (set display to flex to make it visible)
-    modal.style.display = "flex"; 
+.error {
+    border: 2px solid rgb(193, 86, 86);
+    background-color: pink;
+}
 
-    // Update the modal text with the personalized message
-    modalText.innerHTML = `✅ You're Signed Up! We're excited to have you join the event.<br><br>Thanks for RSVP, <strong>${person.name}</strong>!`;
+/*** Success Modal ***/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-    setInterval(animateImage, 600);
-    // Set a timeout to hide the modal after 5 seconds
-    setTimeout(() => {
-      modal.style.display = "none";  // Hide the modal
-    }, 5000);  // 5000 milliseconds (5 seconds)
-  }
-};
+.modal-container {
+    padding: 20px;
+    width: 40%;
+    background-color: #F7E0F4;
+    color: black;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Imprima', cursive;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.modal-item {
+    margin-bottom: 20px;
+}
 
+/*** Dark Mode Customization ***/
+body.dark-mode .navbar ul {
+    background-color: #9B9AE2;
+}
 
+body.dark-mode .navbar ul li a {
+    color: white;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode p {
+    color: white;
+}
+
+body.dark-mode a:visited * {
+    color: white;
+}
+
+/*** Custom Colors ***/
+:root {
+    --bg-color: #EED1F1;
+    --text-color: #231942;
+    --bg-color-dark-mode: #a6a0cf;
+    --text-color-dark-mode: #fff;
+    --accent-color-light: #d2cff5;
+    --accent-color-medium: #684fb5;
+    --accent-color-dark: #482f95;
+    --accent-color-darkest: #231942;
+    --accent-color-green: #28eb76;
+    --error-color: #f8bbd0;
+    --error-color-border: #e63946;
+}
