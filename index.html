@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./images/logo.png" type="image/png">
 </head>
-
 <body>
-    <!-- Navbar -->
     <div class="navbar">
         <ul>
             <li><a href="#home">Home</a></li>
@@ -22,8 +20,8 @@
         </ul>
     </div>
 
-    <!-- Header -->
-    <img id="header-img" src="./images/head-img.png" alt="header image"/>
+    <!-- header -->
+    <img id="header-img" src="./images/head-img.png"/>
     <div id="home">
         <h1>EchoSpace</h1>
         <h2>A Place to Let Go, Share Freely, and Heal Without Judgment</h2>
@@ -33,7 +31,7 @@
         <button type="button">About Us</button>
     </div>
 
-    <!-- About -->
+    <!-- about -->
     <div id="about">
         <h3>About the Event</h3>
         <p>Join us in creating a safe and anonymous space where thoughts, worries, and emotions can be shared without fear of judgment. Whether you're looking for a place to express yourself, read others’ experiences, or simply let go of your stress, this platform is here for you. Every post disappears after a set time, allowing you to free your mind without leaving a permanent trace. Let your worries drift away into the void—you're not alone in this journey.</p>
@@ -47,23 +45,24 @@
         <li> <b>Community Support:</b> <i>A non-judgmental space to connect with others</i></li>
     </ul>
 
-    <!-- Schedule -->
+    <!-- schedule -->
     <div id="schedule">
         <h3>Event Schedule</h3>
-        <img alt="event-activity" src="./images/event1.png"/>
-        <h4>Share Your Story Day</h4>
-        <p>A day where users are encouraged to anonymously share personal stories, experiences, or challenges. This event fosters connection and reminds everyone they are not alone.</p>
-
-        <img alt="event-activity" src="./images/event2.png"/>
-        <h4>Words of Encouragement Week</h4>
-        <p>Users can leave anonymous positive messages, advice, or supportive comments for others. A dedicated section will feature uplifting words to boost morale.</p>
-
-        <img alt="event-activity" src="./images/event3.png"/>
-        <h4>Let It Go Challenge</h4>
-        <p>Participants write down a worry, fear, or negative thought and "send it into the void" (submitted anonymously). The act of writing and releasing can provide emotional relief.</p>
     </div>
 
-    <!-- RSVP -->
+    <img alt="event-activity" src="./images/event1.png"/>
+    <h4>Share Your Story Day</h4>
+    <p>A day where users are encouraged to anonymously share personal stories, experiences, or challenges. This event fosters connection and reminds everyone they are not alone.</p>
+        
+    <img alt="event-activity" src="./images/event2.png"/>
+    <h4>Words of Encouragement Week</h4>
+    <p>Users can leave anonymous positive messages, advice, or supportive comments for others. A dedicated section will feature uplifting words to boost morale.</p>
+
+    <img alt="event-activity" src="./images/event3.png"/>
+    <h4>Let It Go Challenge</h4>
+    <p>Participants write down a worry, fear, or negative thought and "send it into the void" (submitted anonymously). The act of writing and releasing can provide emotional relief.</p>
+
+    <!-- rsvp -->
     <div id="rsvp">
         <h3>RSVP</h3>
         <div class="rsvp-container">
@@ -75,14 +74,14 @@
                     <li>🌬️ Let It Go Challenge — Share what’s been weighing on you and let it fade</li>
                 </ul>
             </div>
-
+            
             <div class="rsvp-participants">
                 <p>🎉 Alex has RSVP'd for Share Your Story Day.</p>
                 <p>🎉 Maya has RSVP'd for Words of Encouragement Week.</p>
                 <p>🎉 Jin has RSVP'd for Let It Go Challenge.</p>
             </div>
         </div>
-
+        
         <div class="form-container">
             <form id="rsvp-form">
                 <label for="name">Name:</label>
@@ -90,7 +89,7 @@
 
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" placeholder="Enter your email">
-
+                
                 <label for="event">Select Event:</label>
                 <select id="event" name="event">
                     <option value="None">None</option>
@@ -98,41 +97,42 @@
                     <option value="words-of-encouragement-week">Words of Encouragement Week</option>
                     <option value="let-it-go-challenge">Let It Go Challenge</option>
                 </select>
-
+            
                 <button id="rsvp-button">Submit RSVP</button>
             </form>
         </div>
+    </div>
 
-        <!-- Success modal -->
-        <div id="success-modal" class="modal">
-            <div class="modal-container">
-                <div id="modal-item">
-                    <p id="modal-text">✅ You're Signed Up! We're excited to have you join the event.</p>
-                </div>
-                <div id="modal-item">
-                    <img id="modal-image" src="./images/Congras.png" alt="Celebration Image" width="200" height="200">
-                </div>
+    <!-- success modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-container">
+            <div class="modal-item">
+                <p id="modal-text">✅ You're Signed Up! We're excited to have you join the event.</p>
+            </div>
+            <div class="modal-item">
+                <img id="modal-image" src="./images/Congras.png" alt="Celebration Image" width="200" height="200">
             </div>
         </div>
     </div>
 
-    <!-- Links -->
+    <!-- links -->
     <div id="links">
         <h3>Links</h3>
-        <a class="block" href="https://screamintothevoid.com/">
-            <article>
-                <h4>Scream Into The Void</h4>
-                <p>Type whatever you may desire, press the “scream” button and watch your words dissolve into the void. Once you’re done screaming, a message pops up: “Glad nobody read that!” </p>
-            </article>
-        </a>
-        <a class="block" href="https://typeintothevoid.com/">
-            <article>
-                <h4>The Void</h4>
-                <p>Type your thoughts into The Void and your text will disappear as you type. No spell check, no save button, no judgement.</p>
-            </article>
-        </a>
     </div>
 
+    <a class="block" href="https://screamintothevoid.com/">
+        <article>
+            <h4>Scream Into The Void</h4>
+            <p>Type whatever you may desire, press the “scream” button and watch your words dissolve into the void. Once you’re done screaming, a message pops up: “Glad nobody read that!” </p>
+        </article>
+    </a>
+    <a class="block" href="https://typeintothevoid.com/">
+        <article>
+            <h4>The Void</h4>
+            <p>Type your thoughts into The Void and your text will disappear as you type. No spell check, no save button, no judgement.</p>
+        </article>
+    </a>
+        
     <script src="index.js"></script>
 </body>
 </html>
