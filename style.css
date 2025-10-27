@@ -1,57 +1,29 @@
-/*** You will not need this file until Unit 3 ***/
-/*** VSCodeEDU preview fix 
-
-  Purpose:
-  - Fix VSCodeEDU issue that causes a white border to show around
-    the preview window
-
-  When To Modify:
-  - If you change the background color of your webpage, you may need to update this rule too.
-***/
-html {
-    background-color: var(--bg-color);
+/*** VSCodeEDU preview fix ***/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
     scroll-padding-top: 80px;
+    font-family: Tahoma, sans-serif;
 }
 
-/*** body ***
-  
-  Purpose:
-  - Add style rules for the body of your webpage
-  - This is useful if you want a rule to apply to EVERYTHING on your page
-    - (Tip: You can always override these rules later in the stylesheet)
-
-  When To Modify:
-  - [ ] Project 3 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
+/*** Body ***/
 body {
-    /* Add a background color or image */
-    background-color: var(--bg-color); /* see bottom of file for color variables */
-
-    /* Customize the default size, color, and font for text*/
     font-size: 16px;
     color: var(--text-color);
-    font-family: Tahoma, sans-serif; /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
-
-    /* Put space around the edges of the webpage */
-    margin: 0;
     padding: 30px;
-
-    
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/*** Text ***
-  
-  Purpose: 
-  - Add style rules for headings (h1-6),
-    paragraphs (p), links (a), and buttons
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--bg-color-dark-mode);
+    color: var(--text-color-dark-mode);
+}
 
-  When To Modify:
-  - [X] Project 3 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
+/*** Text Styles ***/
 h1 {
     font-family: 'Just Another Hand', cursive;
     font-size: 48px;
@@ -68,21 +40,14 @@ h2 {
     text-align: center;
 }
 
-h3 {
+h3, h4 {
     font-family: 'Indie Flower', cursive;
     font-size: 24px;
     color: black;
     text-align: center;
 }
 
-h4 {
-    font-family: 'Indie Flower', cursive;
-    font-size: 24px;
-    color: black;
-    text-align: center;
-}
-
-h5{
+h5 {
     font-family: 'Indie Flower', cursive;
     font-size: 16px;
     color: #695C5C;
@@ -99,373 +64,224 @@ p {
     text-align: left;
 }
 
-/***a,
-a * {
-    
-} ***/
-
 button {
     font-size: 13px;
     padding: 5px 10px;
     margin: 20px;
     background-color: #E2E2E2;
-    color:black;
+    color: black;
     border: 1px solid;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    /* Make the button look different when the user hovers over it */
     background-color: #D9D8D8;
 }
 
 img {
-  display: block;      /* Removes the inline display of the image */
-  margin-left: auto;   /* Automatically adds space to the left */
-  margin-right: auto;  /* Automatically adds space to the right */
-  max-width: 100%;     /* Ensures the image is responsive */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
 }
 
- /* header-img */
 #header-img {
-  width: 100%;
-  height: 150px; 
-  object-fit: cover;
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
 }
 
-/* ul style */
-ul{
-  display: table;
-  margin: 0 auto;
-  padding: 0;
-  list-style-position: outside;
+/* UL Style */
+ul {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    list-style-position: outside;
 }
-ul li{
-  text-align: left;
-  display: list-item;
+
+ul li {
+    text-align: left;
+    display: list-item;
 }
+
 ul li b {
-  font-family: 'Indie Flower', cursive;
-  font-size: 16px;
-  font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
+    font-weight: bold;
 }
+
 ul li i {
-  font-family: 'Imprima', cuesive;
+    font-family: 'Imprima', cursive;
 }
 
-/*** header ***
-  
-  Purpose:
-  - Add style rules for your website's header section
-
-  When To Modify:
-  - [X] Project 3 (REQUIRED FEATURE) 
-  - [ ] Project 4 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
-.header { /* Example A: This styles elements with class="header" */
-    
-}
-
-/*** footer ***
-  
-  Purpose:
-  - Add style rules for your website's footer section
-
-  When To Modify:
-  - [ ] Project 3 (STRETCH FEATURE) 
-  - [ ] Any time after
-***/
-
-.footer { /* Example B: This styles elements with class="footer" */
-    
-}
-
-/*** Navbar [PLACEHOLDER] [ADDED IN UNIT 4] ***/
-/*** Navigation bar (navbar) ***
-  
-  Purpose:
-  - Add style rules for your website's navbar
-
-  When To Modify:
-  - [ ] Project 4 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
+/*** Navbar ***/
 .navbar ul {
-  z-index: 1000; /* Ensures the navbar is on top of other elements */
-  list-style: none;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #E5D1FF;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 5px;
-  margin: 0;
-}
-
-.navbar ul li {
-  margin: 0;
+    z-index: 1000;
+    list-style: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #E5D1FF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    margin: 0;
 }
 
 .navbar ul li a {
-  text-decoration: none;
-  display: block;
-  font-family: 'Imprima', cursive;
-  color: black;
-  font-size: 14px;
-  transition: background-color 0.3s;
-  
+    text-decoration: none;
+    display: block;
+    font-family: 'Imprima', cursive;
+    color: black;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
 .navbar ul li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .navbar ul li button {
-  font-family: 'Imprima', cursive;
-  color: white;
-  font-size: 14px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #4A66A3;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    font-family: 'Imprima', cursive;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4A66A3;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .navbar ul li button:hover {
-  background-color: #7f75d2;
+    background-color: #7f75d2;
 }
 
-
-/*** About Section ***
-  
-  Purpose:
-  - Add style rules for your website's About section
-
-  When To Modify:
-  - [ ] Project 3 (OPTIONAL)
-  - [ ] Project 4 (STRETCH FEATURE) 
-  - [ ] Any time after
-***/
-
-
-/*** Schedule Section ***
-  
-  Purpose:
-  - Add style rules for your website's Schedule section
-
-  When To Modify:
-  - [ ] Project 3 (OPTIONAL)
-  - [ ] Project 4 (STRETCH FEATURE) 
-  - [ ] Any time after
-***/
-
-
-/*** Links Section ***
-  
-  Purpose:
-  - Add style rules for your website's Links section
-
-  When To Modify:
-  - [ ] Project 3 (OPTIONAL)
-  - [ ] Project 4 (STRETCH FEATURE) 
-  - [ ] Any time after
-***/
-
-
-/*** RSVP Section ***
-  
-  Purpose:
-  - Add style rules for your website's RSVP form
-
-  When To Modify:
-  - [ ] Project 6 (REQUIRED FEATURE)
-  - [ ] Project 7 (REQUIRED FEATURE)
-  - [ ] Any time after
-***/
-
+/*** RSVP Section ***/
 .rsvp-container {
-  display: flex; 
-  justify-content: center;
-  flex-direction: row; 
-  gap: 20px; 
-  width: 100%;
-  padding-bottom: 50px; 
-  margin: center;
+    display: flex; 
+    justify-content: center;
+    flex-direction: row; 
+    gap: 20px; 
+    width: 100%;
+    padding-bottom: 50px; 
 }
 
-/* rsvp-para styles */
 .rsvp-para {
     width: 55%; 
     padding-left: 30px;
     padding-right: 10px; 
 }
 
-/* rsvp-participants styles */
 .rsvp-participants {
     width: 45%; 
     padding-left: 20px;
 }
-/* Add other rsvp-related selectors here */
-.form-container{
-  display: flex;
-  justify-content: center;
-  align-items: center
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#rsvp-form{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  width: 100%;
+
+#rsvp-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
 }
 
 #rsvp-button {
-  font-family: 'Imprima', cursive;
-  color: white;
-  font-size: 14px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #4A66A3;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    font-family: 'Imprima', cursive;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4A66A3;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 #rsvp-button:hover {
-  background-color: #7f75d2; /* Slightly darker green on hover */
+    background-color: #7f75d2;
 }
 
 .error {
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgb(193, 86, 86);
-  background-color: pink;
-
-  /* Set border-color and background */
+    border: 2px solid rgb(193, 86, 86);
+    background-color: pink;
 }
 
-/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
-/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
-/*** Success Modal  ***
-
-Purpose:
-- Add style rules to your website's pop-up modal, which appears
-  when a user successfully submits the RSVP form
-
-When To Modify:
-- [ ] Project 9 (REQUIRED FEATURE)
-- [ ] Any time after
-***/
-
+/*** Success Modal ***/
 .modal {
-  display: none;   /* modal should be hidden by default */
-  position: fixed; /* modal cannot move around the screen */
-  z-index: 2;      /* modal appears above other elements */
-  
-  /* Make the modal fill the entire screen */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%; 
-
-  /* Add a semi-transparent background to shadow non-modal elements */
-  background-color: rgba(0,0,0,0.4); /* 40% opacity black */
-
-  /* Flexbox settings for modal */
-  flex-direction: column;      /* center items vertically */
-  align-items: center;         /* center items horizontally */
-  justify-content: center;     /* center items vertically */
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-container {
-  /* Change modal size and spacing here */
-  padding: 20px;
-  width: 40%;                   /* Adjust width as needed */
-
-  /* Customize modal style here */
-  background-color: #F7E0F4;
-  color: black;
-  text-align: center;
-  font-size: 14px;
-  font-family: 'Imprima', cursive;
-  border-radius: 20px;
-
-  /* Optional: Use flexbox to customize .modal-item layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    padding: 20px;
+    width: 40%;
+    background-color: #F7E0F4;
+    color: black;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Imprima', cursive;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-item {
-  /* Optional: Style individual elements within the modal */
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-/* Default dark mode style */
-.dark-mode{
-  background-color: #7070A4;
-  color: white;
-  
+/*** Dark Mode Customization ***/
+body.dark-mode .navbar ul {
+    background-color: #9B9AE2;
 }
 
-.dark-mode .navbar ul li a {
-  color: white;
+body.dark-mode .navbar ul li a {
+    color: white;
 }
 
-.dark-mode .navbar ul {
-  background-color: #9B9AE2; /* Darker background for navbar */
-}
-/* Example: Different dark mode style for h1 */
-.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode p{
-  color: white;
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode p {
+    color: white;
 }
 
-/* Example: Different dark mode style for visited links */
-.dark-mode a:visited * {
-  color: white;
+body.dark-mode a:visited * {
+    color: white;
 }
-/*** Custom Colors (OPTIONAL) ***
-  
-  Purpose:
-  - Use CSS variables to define custom colors for your website
-  - To get you started, we've provided the color scheme used in our example site.
-  - To reference a color variable in your css, use var(--variable-name) in place of a color value
 
-  When To Modify:
-  - [ ] Any time (OPTIONAL)
-***/
-
+/*** Custom Colors ***/
 :root {
-    /* Light Mode */
     --bg-color: #EED1F1;
     --text-color: #231942;
-
-    /* Dark Mode */
     --bg-color-dark-mode: #a6a0cf;
     --text-color-dark-mode: #fff;
-
-    /* Accent Colors */
     --accent-color-light: #d2cff5;
     --accent-color-medium: #684fb5;
     --accent-color-dark: #482f95;
     --accent-color-darkest: #231942;
     --accent-color-green: #28eb76;
-
-    /* Error Colors */
     --error-color: #f8bbd0;
     --error-color-border: #e63946;
 }
-
-
