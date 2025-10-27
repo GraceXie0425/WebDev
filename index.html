@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- head
-
-        Purpose:
-        - Title used here shows up in the browser tab
-        - Link to the favicon (small image that appears in the browser tab)
-        - Link to the CSS file (used to style the webpage)
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 2 (STRETCH FEATURE) (favicon)
-        - [ ] Any time after
-        -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MY WEB101 Website</title>
@@ -27,18 +15,6 @@
     </head>
     
     <body>
-    
-        <!-- navbar
-         Purpose:
-         - Navigation bar that allows users to jump to different sections of the webpage
-         - Also holds buttons for user settings (dark mode, reduce motion)
-         When To Modify:
-        - [ ] Project 4 (REQUIRED FEATURE)
-        - [ ] Project 5 (REQUIRED FEATURE) 
-        - [ ] Project 8 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        -->
-
         <div class="navbar">
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -49,20 +25,7 @@
             </ul>
         </div>
 
-
-        <!-- headings
-
-        Purpose:
-        - Main header section of the webpage
-        - Contains the title, subtitle, image, and key buttons for the webpage
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 3 (REQUIRED FEATURE) 
-        - [ ] Project 4 (REQUIRED FEATURE) 
-        - [ ] Any time after
-        -->
-        <img id="header-img" src="./img/head img.png"/>
+        <img id="header-img" src="./images/head-img.png"/>
         <div id="home">
             <h1>EchoSpace</h1>
             <h2>A Place to Let Go, Share Freely, and Heal Without Judgment</h2>
@@ -71,26 +34,11 @@
             <button type="button">Login</button>
             <button type="button">About Us</button>
         </div>
-        
 
-        
-        <!-- about
-
-        Purpose:
-        - Section for general info about the event
-        - Contains a video, description, and key points about the event
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
         <div id="about">
             <h3>About the Event</h3>
-        <p>Join us in creating a safe and anonymous space where thoughts, worries, and emotions can be shared without fear of judgment. Whether you're looking for a place to express yourself, read others’ experiences, or simply let go of your stress, this platform is here for you. Every post disappears after a set time, allowing you to free your mind without leaving a permanent trace. Let your worries drift away into the void—you're not alone in this journey.</p>
+            <p>Join us in creating a safe and anonymous space where thoughts, worries, and emotions can be shared without fear of judgment. Whether you're looking for a place to express yourself, read others’ experiences, or simply let go of your stress, this platform is here for you. Every post disappears after a set time, allowing you to free your mind without leaving a permanent trace. Let your worries drift away into the void—you're not alone in this journey.</p>
         </div>
-
 
         <h4>What to Expect</h4>
         <h5>———— Our platform provides a safe space for expression and community support</h5>
@@ -100,44 +48,22 @@
             <li> <b>Community Support:</b> <i>A non-judgmental space to connect with others</i></li>
         </ul>
 
-        <!-- schedule
-
-        Purpose:
-        - Section for specific info about the event's schedule
-        - Contains images and descriptions of each activity
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
         <div id="schedule">
             <h3>Event Schedule</h3>
         </div>
 
-
-        <img alt="event-activity" src="./img/event1.png"/>
+        <img alt="event-activity" src="./images/event1.png"/>
         <h4>Share Your Story Day</h4>
         <p>A day where users are encouraged to anonymously share personal stories, experiences, or challenges. This event fosters connection and reminds everyone they are not alone.</p>
             
-        <img alt="event-activity" src="./img/event2.png"/>
+        <img alt="event-activity" src="./images/event2.png"/>
         <h4>Words of Encouragement Week</h4>
         <p> Users can leave anonymous positive messages, advice, or supportive comments for others. A dedicated section will feature uplifting words to boost morale.</p>
 
-        <img alt="event-activity" src="./img/event3.png"/>
+        <img alt="event-activity" src="./images/event3.png"/>
         <h4>Let It Go Challenge</h4>
         <p>Participants write down a worry, fear, or negative thought and "send it into the void" (submitted anonymously). The act of writing and releasing can provide emotional relief.</p>
 
-        <!-- rsvp
-        Purpose:
-        - Section for users to sign up for the event
-        - Contains a form for users to input their information, and a list of other users who have signed up
-
-        When To Modify:
-        - [x] Project 6 (REQUIRED FEATURE) 
-        - [ ] Project 6 (STRETCH FEATURE) 
-        - [x] Any time after
-        --> 
         <div id="rsvp">
             <h3>RSVP</h3>
             <div class="rsvp-container">
@@ -157,18 +83,14 @@
                 </div>
             </div>
             
-            <!--- Sign RSVP Form --->
             <div class="form-container">
                 <form id="rsvp-form" title="rsvp-form">
-                    <!-- Name input (optional) -->
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name">
 
-                    <!-- Optional message -->
                     <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" placeholder="Enter your email"></textarea>
+                    <input type="text" id="email" name="email" placeholder="Enter your email">
                     
-                    <!-- Event selection -->
                     <label for="event">Select Event:</label>
                     <select id="event" name="event">
                         <option value="None">None</option>
@@ -177,56 +99,25 @@
                         <option value="let-it-go-challenge">Let It Go Challenge</option>
                     </select>
                 
-
-                    <!-- Submit button -->
                     <button id="rsvp-button">Submit RSVP</button>
                 </form>
             </div>
 
-
-
-        <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
-         <!-- success modal
-
-Purpose:
-- Modal that appears when a user successfully signs up for the event
-- Contains a personalized message and image
-
-When To Modify:
-- [ ] Project 9 (REQUIRED FEATURE)
-- [ ] Project 9 (STRETCH FEATURE) 
-- [ ] Any time after
---> 
-
-<div id="success-modal" class="modal">
-    <div class="modal-container">
-        <div id="modal-item">
-            <!-- Text element here -->
-            <p id="modal-text">✅ You're Signed Up! We're excited to have you join the event.</p>
+        <div id="success-modal" class="modal">
+            <div class="modal-container">
+                <div id="modal-item">
+                    <p id="modal-text">✅ You're Signed Up! We're excited to have you join the event.</p>
+                </div>
+                <div id="modal-item">
+                    <img id="modal-image" src="./images/congrats.png" alt="Celebration Image" width="200" height="200">
+                </div>
+            </div>
         </div>
-        <div id="modal-item">
-            <!-- Image element here -->
-            <img id="modal-image" src="img/Congras.png" alt="Celebration Image" width="200" height="200">
-        </div>
-    </div>
-</div>
 
-
-        <!-- links
-
-        Purpose:
-        - Links to other resources related to the event
-
-        When To Modify:
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
         <div id="links">
             <h3>Links</h3>
         </div>
 
-        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
         <a class="block" href="https://screamintothevoid.com/">
             <article>
                 <h4>Scream Into The Void</h4>
@@ -240,8 +131,6 @@ When To Modify:
             </article>
         </a>
             
-        <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
-        <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
         <script src="index.js"></script>
     </body>
 </html>
